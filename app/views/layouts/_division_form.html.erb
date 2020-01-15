@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @division %>
+
+<%= form_for @division do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit  %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1><%= @division.name %></h1>
+
+
+<p><%= link_to "Edit", edit_division_path(@division) %></p>
+<p><%= link_to "Delete", division_path(@division),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to divisions", divisions_path %></p>
