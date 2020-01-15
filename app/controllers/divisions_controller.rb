@@ -1,5 +1,4 @@
 class DivisionsController < ApplicationController
-
     def index
         # Code for listing all divisions goes here.
         @divisions = Division.all

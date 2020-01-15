@@ -1,0 +1,15 @@
+<% if @album.songs.any? %>
+  <h4>Here are the employees for this album:</h4>
+
+  <% @album.songs.each do |song| %>
+    <ul>
+      <li>
+        <%= link_to song.name, album_song_path(@album, song) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No songs are listed for this album.</p>
+<% end %>
+
+<p><%= link_to "Add a song", new_album_song_path(@album) %></p>

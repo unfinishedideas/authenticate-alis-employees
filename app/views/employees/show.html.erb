@@ -1,0 +1,11 @@
+<h1><%= @employee.name %></h1>
+<h2><%= @employee.title %></h2>
+<h3><%= @employee.division.name %></h3>
+
+
+<p><%= link_to "Edit", edit_division_employee_path(@division, @employee) %></p>
+<p><%= link_to "Delete", division_employee_path(@division, @employee),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to employees", division_employees_path %></p>

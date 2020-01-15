@@ -1,9 +1,33 @@
 <h1><%= @division.name %></h1>
 
+<% if @division.employees.any? %>
+    <h4>Here are the employees for this album:</h4>
+
+    <ul>
+    <% @division.employees.each do |employee| %>
+        <li>
+            <%= link_to employee.name, division_employee_path(@division, employee) %>
+        </li>
+    <% end %>
+    </ul>
+<% else %>
+    <p>No employees are listed for this division.</p>
+<% end %>
+
+<p><%= link_to "Add new employee", new_division_employee_path(@division) %></p>
+
+
 
 <p><%= link_to "Edit", edit_division_path(@division) %></p>
-<p><%= link_to "Delete", division_path(@division),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+<p>
+    <%=
+        link_to "Delete",
+        division_path(@division),
+        :data => {
+            :confirm => "You sure?",
+            :method => "delete"
+        }
+    %>
+</p>
 
 <p><%= link_to "Return to divisions", divisions_path %></p>

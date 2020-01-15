@@ -1,0 +1,22 @@
+<%= render "layouts/errors", :object => @employee %>
+
+<%= form_for [@division, @employee] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :division_id %>
+    <%=
+        f.collection_select(
+        :division_id,
+        Division.order(:name),
+        :id,
+        :name,
+        prompt: true,
+        include_blank: true,
+        disabled: [nil]
+        )
+    %>
+
+    <%= f.submit %>
+<% end %>

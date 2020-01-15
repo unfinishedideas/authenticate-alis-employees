@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
 
     def index
         # Code for listing all divisions goes here.
-        @divisions = Division.all
+        @employees = Employee.all
         render :index
     end
 
@@ -16,7 +16,7 @@ class EmployeesController < ApplicationController
     def create
         # Code for creating a new division goes here.
         @division = Division.find(params[:division_id])
-        @employee = @division.employee.new(employee_params)
+        @employee = @division.employees.new(employee_params)
         if @employee.save
             redirect_to division_path(@division)
         else
@@ -27,7 +27,7 @@ class EmployeesController < ApplicationController
     def show
         # Code for showing a single album goes here.
         @division = Division.find(params[:division_id])
-        @employee.Employee.find(params[:id])
+        @employee = Employee.find(params[:id])
         render :show
     end
 
