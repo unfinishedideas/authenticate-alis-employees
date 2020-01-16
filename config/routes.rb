@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root to: 'divisions#index'
+    root to: 'home#index'
     resources :divisions do
         resources :employees
     end
