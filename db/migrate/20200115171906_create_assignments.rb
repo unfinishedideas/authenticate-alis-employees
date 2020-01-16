@@ -3,7 +3,7 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
         create_table :assignments do |t|
             t.belongs_to :employee, index: true
             t.belongs_to :project, index: true
-            t.timestamp
+            t.timestamps
         end
     end
 end

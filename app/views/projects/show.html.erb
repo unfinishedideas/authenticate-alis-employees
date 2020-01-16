@@ -1,0 +1,33 @@
+<h1><%= @project.name %></h1>
+<h2><%= @project.due_date %></h2>
+
+<% if @project.assignments.any? %>
+    <h4>Here are the employees assigned to this project:</h4>
+
+    <ul>
+    <% @project.assignments.each do |assignment| %>
+        <li>
+            <%= link_to assignment.employee.name, division_employee_path(assignment.employee.division, assignment.employee) %>
+        </li>
+    <% end %>
+    </ul>
+<% else %>
+    <p>No employees are assigned to this project.</p>
+<% end %>
+
+<p><%= link_to "Assign new employee", new_project_assignment_path(@project) %></p>
+
+
+<p><%= link_to "Edit", edit_project_path(@project) %></p>
+<p>
+    <%=
+        link_to "Delete",
+        project_path(@project),
+        :data => {
+            :confirm => "You sure?",
+            :method => "delete"
+        }
+    %>
+</p>
+
+<p><%= link_to "Return to projects", projects_path %></p>

@@ -36,7 +36,7 @@ class DivisionsController < ApplicationController
         # Code for updating an album goes here.
         @division = Division.find(params[:id])
         if @division.update(division_params)
-            redirect_to divisions_path
+            redirect_to division_path
         else
             render :edit
         end

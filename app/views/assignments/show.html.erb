@@ -1,0 +1,9 @@
+<h1><%= @assignment %></h1>
+
+
+<p><%= link_to "Edit", edit_project_assignment_path(@project, @assignment) %></p>
+<p><%= link_to "Delete", project_assignment_path(@project, @assignment),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to project", project_assignments_path %></p>
