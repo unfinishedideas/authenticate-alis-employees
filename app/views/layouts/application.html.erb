@@ -8,19 +8,22 @@
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
-
     <body>
         <header>
-            <h1>Employee Tracker</h1>
-            <nav>
-                <%= link_to 'Manage Divisions', divisions_path %>
-                <%= link_to 'Manage Projects', projects_path %>
-            </nav>
+            <div>
+                <h1>Employee Tracker</h1>
+                <nav>
+                    <%= link_to 'Manage Divisions', divisions_path %>
+                    <%= link_to 'Manage Projects', projects_path %>
+                </nav>
+            </div>
         </header>
 
         <%= flash[:alert] %>
         <%= flash[:notice] %>
 
-        <%= yield %>
+        <main>
+            <%= yield %>
+        </main>
     </body>
 </html>

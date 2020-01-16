@@ -53,44 +53,84 @@
     100% { opacity: 0%; }
 }
 
+* {
+    border: 1px solid red;
+}
+
 body {
     background-color: white;
+    padding: 0;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
 }
 header {
-    text-align: center;
+    width: 100%;
+    height: 15vh;
+
+    border-bottom: 2px solid black;
 }
-nav a {
+header div {
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-rows: 75% 25%;
+    grid-template-columns: 1fr;
+}
+header div h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3.5rem;
+}
+header div nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-column-gap: 5rem; */
+}
+header div nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     text-decoration: none;
     color: black;
 }
-header h1 {
-    font-size: 3.5rem;
-}
-#bs-container {
+
+main {
     width: 75%;
-    height: 20rem;
     margin: 0 auto;
+}
+
+
+#bs-container {
+    height: 4rem;
+    margin: 2rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 #bs-container h2 {
     position: absolute;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 #bs-container h2:nth-of-type(1) {
-    animation: 15s t-one linear infinite;
+    animation: 20s t-one linear infinite;
 }
 #bs-container h2:nth-of-type(2) {
-    animation: 15s t-two linear infinite;
+    animation: 20s t-two linear infinite;
 }
 #bs-container h2:nth-of-type(3) {
-    animation: 15s t-three linear infinite;
+    animation: 20s t-three linear infinite;
 }
 #bs-container h2:nth-of-type(4) {
-    animation: 15s t-four linear infinite;
+    animation: 20s t-four linear infinite;
 }
 #bs-container h2:nth-of-type(5) {
-    animation: 15s t-five linear infinite;
+    animation: 20s t-five linear infinite;
 }
