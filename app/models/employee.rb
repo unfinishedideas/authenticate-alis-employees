@@ -9,6 +9,8 @@ class Employee < ApplicationRecord
     validates_length_of :title, maximum: 100
     before_save(:titleize_employee)
 
+    scope :division, -> (division_id) { where('division_id =?', division_id) }
+
     private
     def titleize_employee
         self.name = self.name.to_s.titleize

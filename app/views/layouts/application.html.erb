@@ -11,8 +11,13 @@
 
     <body>
         <header>
-            <h1>APED</h1>
+            <h1>Employee Tracker</h1>
+            <nav>
+                <%= link_to 'Manage Divisions', divisions_path %>
+                <%= link_to 'Manage Projects', projects_path %>
+            </nav>
         </header>
+
         <%= flash[:alert] %>
         <%= flash[:notice] %>
 

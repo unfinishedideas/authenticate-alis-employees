@@ -1,15 +1,96 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@keyframes t-one {
+    0% { opacity: 0%; }
+    5% { opacity: 100%; }
+    15% { opacity: 100%; }
+    20% { opacity: 0%; }
+    100% { opacity: 0%; }
+}
+@keyframes t-two {
+    0% { opacity: 0%; }
+    20% { opacity: 0%; }
+    25% { opacity: 100%; }
+    35% { opacity: 100%; }
+    40% { opacity: 0%; }
+    100% { opacity: 0%; }
+}
+@keyframes t-three {
+    0% { opacity: 0%; }
+    40% { opacity: 0%; }
+    45% { opacity: 100%; }
+    55% { opacity: 100%; }
+    60% { opacity: 0%; }
+    100% { opacity: 0%; }
+}
+@keyframes t-four {
+    0% { opacity: 0%; }
+    60% { opacity: 0%; }
+    65% { opacity: 100%; }
+    75% { opacity: 100%; }
+    80% { opacity: 0%; }
+    100% { opacity: 0%; }
+}
+@keyframes t-five {
+    0% { opacity: 0%; }
+    80% { opacity: 0%; }
+    85% { opacity: 100%; }
+    95% { opacity: 100%; }
+    100% { opacity: 0%; }
+}
+
+body {
+    background-color: white;
+}
+header {
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+header h1 {
+    font-size: 3.5rem;
+}
+#bs-container {
+    width: 75%;
+    height: 20rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bs-container h2 {
+    position: absolute;
+    font-size: 2.5rem;
+}
+#bs-container h2:nth-of-type(1) {
+    animation: 15s t-one linear infinite;
+}
+#bs-container h2:nth-of-type(2) {
+    animation: 15s t-two linear infinite;
+}
+#bs-container h2:nth-of-type(3) {
+    animation: 15s t-three linear infinite;
+}
+#bs-container h2:nth-of-type(4) {
+    animation: 15s t-four linear infinite;
+}
+#bs-container h2:nth-of-type(5) {
+    animation: 15s t-five linear infinite;
+}
