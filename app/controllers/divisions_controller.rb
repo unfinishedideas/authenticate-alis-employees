@@ -14,7 +14,7 @@ class DivisionsController < ApplicationController
         # Code for creating a new division goes here.
         @division = Division.new(division_params)
         if @division.save
-            flash[:notice] = 'Division created successfully!'
+            flash[:notice] = "Division '#{@division.name}' created successfully!"
             redirect_to divisions_path
         else
             render :new
@@ -36,6 +36,7 @@ class DivisionsController < ApplicationController
         # Code for updating an album goes here.
         @division = Division.find(params[:id])
         if @division.update(division_params)
+            flash[:notice] = "Division '#{@division.name}' updated."
             redirect_to division_path
         else
             render :edit
@@ -46,6 +47,7 @@ class DivisionsController < ApplicationController
         # Code for deleting an album goes here.
         @division = Division.find(params[:id])
         @division.destroy
+        flash[:alert] = "Division '#{@division.name}' destroyed."
         redirect_to divisions_path
     end
 

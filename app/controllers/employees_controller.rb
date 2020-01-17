@@ -18,6 +18,7 @@ class EmployeesController < ApplicationController
         @division = Division.find(params[:division_id])
         @employee = @division.employees.new(employee_params)
         if @employee.save
+            flash[:notice] = "Employee '#{@employee.name}' created."
             redirect_to division_path(@division)
         else
             render :new
@@ -42,7 +43,8 @@ class EmployeesController < ApplicationController
         @division = Division.find(params[:division_id])
         @employee = Employee.find(params[:id])
         if @employee.update(employee_params)
-            redirect_to divisions_path(@employee.division)
+            flash[:notice] = "Employee '#{@employee.name}' updated."
+            redirect_to division_employee_path(@division, @employee)
         else
             render :edit
         end
@@ -52,6 +54,7 @@ class EmployeesController < ApplicationController
         # Code for deleting an album goes here.
         @employee = Employee.find(params[:id])
         @employee.destroy
+        flash[:alert] = "Employee '#{@employee.name}' terminated."
         redirect_to division_path(@employee.division)
     end
 

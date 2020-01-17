@@ -8,6 +8,8 @@ class Division < ApplicationRecord
 
     private
     def titleize_division
-        self.name = self.name.to_s.titleize
+        self.name = self.name.to_s.capitalize
     end
+
+    scope :num_employees, -> (division_param) { Employee.where(division_id: division_param.id).count }
 end

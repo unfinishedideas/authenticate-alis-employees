@@ -3,7 +3,7 @@
 <% if @divisions.any? %>
   <ul>
     <% @divisions.each do |division| %>
-      <li><%= link_to division.name, division_path(division) %></li>
+      <li><%= link_to division.name, division_path(division) %>, <%= Division.num_employees(division) %> employees</li>
     <% end %>
   </ul>
 <% else %>

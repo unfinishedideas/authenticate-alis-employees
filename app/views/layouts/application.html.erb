@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ProjectTracker</title>
-        <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
+<head>
+    <title>ProjectTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </head>
-    <body>
-        <header>
-            <div>
-                <h1>Employee Tracker</h1>
-                <nav>
-                    <%= link_to 'Manage Divisions', divisions_path %>
-                    <%= link_to 'Manage Projects', projects_path %>
-                </nav>
-            </div>
-        </header>
-
-        <%= flash[:alert] %>
-        <%= flash[:notice] %>
-
-        <main>
-            <%= yield %>
-        </main>
-    </body>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+    <header>
+        <div>
+            <h1><%= link_to 'Employee Tracker', '/' %></h1>
+            <nav>
+                <%= link_to 'Manage Divisions', divisions_path, class: 'nav-divisions' %>
+                <%= link_to 'Manage Projects', projects_path, class: 'nav-projects' %>
+            </nav>
+        </div>
+    </header>
+    <div id='flash'>
+        <p class='alert'><%= flash[:alert] || 'Hell yeah brother' %></p>
+        <p class='notice'><%= flash[:notice] %></p>
+    </div>
+    <main>
+        <%= yield %>
+    </main>
+</body>
 </html>
