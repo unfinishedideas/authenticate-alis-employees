@@ -18,10 +18,12 @@
             </nav>
         </div>
     </header>
+    <% unless (flash[:alert].nil? && flash[:notice].nil?) %>
     <div id='flash'>
-        <p class='alert'><%= flash[:alert] || 'Hell yeah brother' %></p>
+        <p class='alert'><%= flash[:alert] %></p>
         <p class='notice'><%= flash[:notice] %></p>
     </div>
+    <% end %>
     <main>
         <%= yield %>
     </main>

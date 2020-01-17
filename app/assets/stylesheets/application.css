@@ -79,10 +79,6 @@
     }
 }
 
-* {
-    /* border: 1px solid red; */
-}
-
 body {
     background-color: white;
     padding: 0;
@@ -173,6 +169,7 @@ header div nav a {
 }
 #flash p:empty {
     height: 0;
+    border-bottom: 0px;
 }
 #flash p:not(:empty) {
     height: 1.5rem;
@@ -183,43 +180,39 @@ header div nav a {
     border-bottom: 2px solid #8a2828;
 }
 #flash .notice {
-    background-color: yellow;
+    background-color: #cef5d4;
+    border-bottom: 2px solid #33613a;
 }
 
 main {
     width: 75%;
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
-/* * {
-    border: 1px solid red;
-    } */
 
-
-
-    #bs-container {
-        height: 4rem;
-        margin: 2rem auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #bs-container h2 {
-        position: absolute;
-        font-size: 2rem;
-    }
-    #bs-container h2:nth-of-type(1) {
-        animation: 20s t-one linear infinite;
-    }
-    #bs-container h2:nth-of-type(2) {
-        animation: 20s t-two linear infinite;
-    }
-    #bs-container h2:nth-of-type(3) {
-        animation: 20s t-three linear infinite;
-    }
-    #bs-container h2:nth-of-type(4) {
-        animation: 20s t-four linear infinite;
-    }
-    #bs-container h2:nth-of-type(5) {
-        animation: 20s t-five linear infinite;
-    }
+#bs-container {
+    height: 4rem;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bs-container h2 {
+    position: absolute;
+    font-size: 2rem;
+}
+#bs-container h2:nth-of-type(1) {
+    animation: 20s t-one linear infinite;
+}
+#bs-container h2:nth-of-type(2) {
+    animation: 20s t-two linear infinite;
+}
+#bs-container h2:nth-of-type(3) {
+    animation: 20s t-three linear infinite;
+}
+#bs-container h2:nth-of-type(4) {
+    animation: 20s t-four linear infinite;
+}
+#bs-container h2:nth-of-type(5) {
+    animation: 20s t-five linear infinite;
+}
