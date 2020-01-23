@@ -1,4 +1,6 @@
 class AssignmentsController < ApplicationController
+  before_action :admin_access, only: [:destroy]
+  before_action :authorize, only: [:create, :new, :edit, :update]
 
     def index
         # Code for listing all divisions goes here.
